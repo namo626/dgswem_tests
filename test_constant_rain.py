@@ -3,18 +3,13 @@ import os
 import pytest
 from util import *
 
-case = "wetdry"
-ADCIRC = "../dgswem_serial"
+
+case = "constant_rain"
 ADCIRC_CUDA = "../gpu"
 
-"""
-@pytest.fixture(scope="module")
-def adg_solution():
-    return make_solution(case, ADCIRC, "serial")
-"""
 @pytest.fixture(scope="module")
 def true_solution():
-    return read_solution(case,  "true")
+    return read_solution(case, "true")
 
 @pytest.fixture(scope="module")
 def cuda_solution():
@@ -22,4 +17,4 @@ def cuda_solution():
 
 
 def test_cuda(true_solution, cuda_solution):
-    np.testing.assert_allclose(cuda_solution, true_solution, rtol=1e-3)
+    np.testing.assert_allclose(cuda_solution, true_solution, rtol=1e-4)

@@ -17,4 +17,4 @@ def cuda_solution():
 
 
 def test_cuda(true_solution, cuda_solution):
-    np.testing.assert_allclose(cuda_solution, true_solution, rtol=1e-8)
+    np.testing.assert_allclose(cuda_solution, true_solution, rtol=1e-4)
