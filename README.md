@@ -1,6 +1,7 @@
 ## Test cases
 - Quarter annular
-- Quarter annular + NWS20 wind
+- Quarter annular + NWS20 wind + constant rain
+- Quarter annular + NWS20 wind + R-CLIPER rain
 - Internal overflow (wetting and drying)
   
 ## Running the tests
